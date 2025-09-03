@@ -1,0 +1,14 @@
+{
+  "fmt": {
+    "singleQuote": true,
+    "semiColons": false,
+    "lineWidth": 100
+  },
+  "imports": {
+    "dots-wrapper": "npm:dots-wrapper@^3.12.4"
+  },
+  "tasks": {
+    "compile": "deno compile --allow-env --allow-read --allow-write=abox.json --allow-net=api.digitalocean.com:443 --allow-run=ssh,scp,zed index.ts",
+    "install":"deno task compile && sudo mv abox /usr/local/bin/abox"
+  }
+}
