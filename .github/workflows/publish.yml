@@ -1,0 +1,36 @@
+name: Publish
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  publish:
+    name: Publish for ${{ matrix.human_name }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - human_name: apple-intel
+            full_name: x86_64-apple-darwin
+          - human_name: apple-silicon
+            full_name: aarch64-apple-darwin
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Build
+        run: TARGET=${{ matrix.full_name }} OUTPUT=${{ matrix.human_name }} deno task compile-ci
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ matrix.human_name }}
+          asset_name: abox-${{ matrix.human_name }}
+          tag: ${{ github.ref }}
