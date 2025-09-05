@@ -7,11 +7,11 @@ A small CLI tool to spin up a temporary [DigitalOcean](https://www.digitalocean.
 ## Notable Features
 
 - End-to-end automated setup and teardown - even Zed is opened for you.
-- Automatically copies your local files to the box on creation and back to your machine on deletion so you are ready code and never lose your work.
-- Updates, installs packages and reboots the box (if needed) after creation so you work on an a fully up-to-date fresh box.
-- Automatically adds all SSH keys from your DigitalOcean account to the box. Private keys are NEVER accessed or stored.
+- Automatically copies your local files to the box on creation and back to your machine on deletion so you are ready to code asap and never lose your work.
+- Updates, installs packages and reboots the box after creation if needed so you work on an a fully up-to-date fresh box.
+- Automatically adds all SSH keys from your DigitalOcean to the box. Private keys are NEVER accessed or stored.
 - Doesn't require adding public SSH keys to `known_hosts` so you don't have lots of temporary keys there.
-- Allows configuring which VPS image, size and region you need - get a tiny droplet or a beast of a server if required.
+- Allows configuring VPS image, size and region - get a tiny droplet or a beast of a server if required.
 - Always waits until the box is fully ready to go - no manual checking necessary.
 
 ## Usage
@@ -35,21 +35,21 @@ That's it!
 ### Pre-Built Binaries
 
 1. Grab the latest binary for your platform from [GitHub Releases](https://github.com/kolyasapphire/abox/releases).
-2. Give it execute permissions:
+2. Give it executable permissions:
 
 ```bash
 chmod +x abox
 ```
 
-3. Move it to a directory in your PATH:
+3. Move it to a directory in your `PATH` (`sudo` will request your password):
 
 ```bash
 sudo mv abox /usr/local/bin/abox
 ```
 
-If your OS doesn't want to execute the binary, allow it in settings.
+If your OS doesn't want to execute the binary, allow this in settings.
 
-If you have any doubts, check the [GitHub Workflow](https://github.com/kolyasapphire/abox/blob/main/.github/workflows/publish.yml) for building the binaries.
+If you have any security doubts, check the [GitHub Workflow](https://github.com/kolyasapphire/abox/blob/main/.github/workflows/publish.yml) for building the binaries.
 
 ### From Source
 
@@ -73,7 +73,7 @@ deno compile --allow-env --allow-read --allow-write=abox.json --allow-net=api.di
 
 ## Configuration
 
-The only thing you need to do is to get a [DigitalOcean API token](https://cloud.digitalocean.com/account/api/tokens) with the following permissions:
+The only thing you need to do is create a [DigitalOcean API token](https://cloud.digitalocean.com/account/api/tokens) with the following permissions:
 
 - Create Access: droplet
 - Read Access: droplet / ssh_key
