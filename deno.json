@@ -8,8 +8,8 @@
     "dots-wrapper": "npm:dots-wrapper@^3.12.4"
   },
   "tasks": {
-    "compile": "deno compile --allow-env --allow-read --allow-write=abox.json --allow-net=api.digitalocean.com:443 --allow-run=ssh,scp,zed index.ts",
     "install":"deno task compile && sudo mv abox /usr/local/bin/abox",
+    "compile": "deno compile --allow-env --allow-read --allow-write=abox.json --allow-net=api.digitalocean.com:443 --allow-run=ssh,scp,zed index.ts",
     "compile-ci": "deno compile --target $TARGET --output $OUTPUT --allow-env --allow-read --allow-write=abox.json --allow-net=api.digitalocean.com:443 --allow-run=ssh,scp,zed index.ts"
   }
 }
