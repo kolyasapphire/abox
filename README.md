@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="200" height="234" alt="logo" src="https://github.com/user-attachments/assets/c260f63a-32e0-4092-992b-3928b5f9c9d4" />
+</p>
+
 # abox
 
 A small CLI tool to spin up a temporary [DigitalOcean](https://www.digitalocean.com/?refcode=c428dc58f014) VPS for safe remote [Zed](https://zed.sh/) coding sessions. It allows installing any dependencies you need and running Zed Agent without worrying about safety. When no longer needed, it takes just one command to destroy the box.
