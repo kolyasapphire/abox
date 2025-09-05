@@ -51,9 +51,9 @@ chmod +x abox
 sudo mv abox /usr/local/bin/abox
 ```
 
-If your OS doesn't want to execute the binary, allow this in settings.
+If your OS doesn't want to execute the binary, allow execution in security settings and confirm when opening with "Open Anyway".
 
-If you have any security doubts, check the [GitHub Workflow](https://github.com/kolyasapphire/abox/blob/main/.github/workflows/publish.yml) for building the binaries.
+If you have any security doubts, check the [GitHub Workflow](https://github.com/kolyasapphire/abox/blob/main/.github/workflows/publish.yml) for building the binaries or use the second method to build from source - Deno will sign the binary with your ad-hoc certificate so you won't have to deal with OS security settings.
 
 ### From Source
 
