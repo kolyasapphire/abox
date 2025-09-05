@@ -1,15 +1,18 @@
 # abox
 
-A small CLI tool to spin up a temporary [DigitalOcean](https://www.digitalocean.com/) VPS for safe remote [Zed](https://zed.sh/) coding sessions. It allows installing any dependencies you need and running Zed Agent without worrying about safety. When no longer needed, it takes just one command to destroy the box.
+A small CLI tool to spin up a temporary [DigitalOcean](https://www.digitalocean.com/?refcode=c428dc58f014) VPS for safe remote [Zed](https://zed.sh/) coding sessions. It allows installing any dependencies you need and running Zed Agent without worrying about safety. When no longer needed, it takes just one command to destroy the box.
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=c428dc58f014)
 
 ## Notable Features
 
-1. Automatically copies your local files to the box on creation and back to your machine on deletion.
-2. Updates, installs packages and reboots the box (if needed) after creation.
-3. Automatically adds all SSH keys from your DigitalOcean account to the box.
-4. Doesn't require adding public SSH keys to `known_hosts`.
-5. Allows configuring which VPS image, size and region you need.
-6. Always waits until the box is fully ready to go.
+- End-to-end automated setup and teardown - even Zed is opened for you.
+- Automatically copies your local files to the box on creation and back to your machine on deletion so you are ready code and never lose your work.
+- Updates, installs packages and reboots the box (if needed) after creation so you work on an a fully up-to-date fresh box.
+- Automatically adds all SSH keys from your DigitalOcean account to the box. Private keys are NEVER accessed or stored.
+- Doesn't require adding public SSH keys to `known_hosts` so you don't have lots of temporary keys there.
+- Allows configuring which VPS image, size and region you need - get a tiny droplet or a beast of a server if required.
+- Always waits until the box is fully ready to go - no manual checking necessary.
 
 ## Usage
 
@@ -17,15 +20,15 @@ A small CLI tool to spin up a temporary [DigitalOcean](https://www.digitalocean.
 abox
 ```
 
-1. Simply run `abox` in your terminal in any directory to create a box.
-2. Run it again in the same directory to destroy the box.
+- Simply run `abox` in your terminal in any directory to create a box.
+- Run it again in the same directory to destroy the box.
 
 That's it!
 
 ## Safety
 
-1. Runs in a [Deno sandbox](https://docs.deno.com/runtime/fundamentals/security/) with [only necessary permissions](https://github.com/kolyasapphire/abox/blob/main/deno.json#L11), you can even compile it with no pre-approved permissions at all.
-2. Just one third-party dependency - [dots-wrapper](https://www.npmjs.com/package/dots-wrapper), a simple DigitalOcean API wrapper.
+- Runs in a [Deno sandbox](https://docs.deno.com/runtime/fundamentals/security/) with [only necessary permissions](https://github.com/kolyasapphire/abox/blob/main/deno.json#L11), you can even compile it with no pre-approved permissions at all.
+- Just one third-party dependency - [dots-wrapper](https://www.npmjs.com/package/dots-wrapper), a simple DigitalOcean API wrapper.
 
 ## Installation
 
@@ -46,7 +49,7 @@ sudo mv abox /usr/local/bin/abox
 
 If your OS doesn't want to execute the binary, allow it in settings.
 
-If you have any doubts, check the [GitHub Workflow](https://github.com/kolyasapphire/abox/blob/main/.github/workflows/publish.yml).
+If you have any doubts, check the [GitHub Workflow](https://github.com/kolyasapphire/abox/blob/main/.github/workflows/publish.yml) for building the binaries.
 
 ### From Source
 
@@ -114,11 +117,11 @@ It gets deleted after the box is destroyed.
 ## Improvement Ideas
 
 General:
-1. Create a proper non-admin user instead of using the `root` account
-2. Windows support
+- Create a proper non-admin user instead of using the `root` account
+- Windows support
 
 Customisation:
-1. Custom cloud config or ability to disable its parts (no upgrades, no Deno, etc)
-2. Custom IDE command
-3. Allow disabling IDE command completely
-4. Allow disabling file transfers
+- Custom cloud config or ability to disable its parts (no upgrades, no Deno, etc)
+- Custom IDE command
+- Allow disabling IDE command completely
+- Allow disabling file transfers
