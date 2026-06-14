@@ -3,7 +3,7 @@ import type { Settings } from './types.ts'
 let TOKEN = ''
 let REGION = 'lon1'
 let SIZE = 's-2vcpu-4gb-amd'
-let IMAGE = 'ubuntu-25-04-x64'
+let IMAGE = 'ubuntu-24-04-x64'
 
 const loadSettings = async () => {
   const home = Deno.env.get('HOME') ?? Deno.env.get('USERPROFILE')
