@@ -5,7 +5,7 @@
     "lineWidth": 100
   },
   "imports": {
-    "dots-wrapper": "npm:dots-wrapper@^3.12.4"
+    "dots-wrapper": "npm:dots-wrapper@^3.12.10"
   },
   "tasks": {
     "install":"deno task compile && sudo mv abox /usr/local/bin/abox",
