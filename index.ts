@@ -18,7 +18,7 @@ if (initialState) {
   Deno.exit()
 }
 
-console.log('Creating a box')
+console.log('Creating a box...')
 const id = await dot.createDroplet()
 await state.save({ id })
 
