@@ -1,9 +1,9 @@
 export const cloudConfig = `#cloud-config
 
-package_update: true
-package_upgrade: true
-package_reboot_if_required: true
 timezone: Etc/UTC
+
+package_update: true
+package_upgrade: false
 
 packages:
   - python3
