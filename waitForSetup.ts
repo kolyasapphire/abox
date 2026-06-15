@@ -14,4 +14,7 @@ export const waitForSetup = async (ip: string) => {
 
     await wait()
   }
+
+  // Extra safe buffer after setup finish
+  await wait()
 }
