@@ -36,5 +36,6 @@ await execute(['scp', '-r', currentDir, `root@${ip}:/root/abox`])
 console.log('Opening Zed...')
 await execute(['zed', `ssh://root@${ip}/root/abox`, '--', '-o', 'StrictHostKeyChecking=no'])
 
+// Maybe just sync a local ~/.config/codex to the droplet?
 console.log('Signing in to Codex...')
 await executeSshStreamed(ip, ['codex', 'login', '--device-auth'])
