@@ -1,5 +1,5 @@
 import { dot } from './dot.ts'
-import { execute } from './execute.ts'
+import { execute, executeSshStream } from './execute.ts'
 import { state } from './state.ts'
 import { waitForSetup } from './waitForSetup.ts'
 
@@ -35,3 +35,6 @@ await execute(['scp', '-r', currentDir, `root@${ip}:/root/abox`])
 
 console.log('Opening Zed...')
 await execute(['zed', `ssh://root@${ip}/root/abox`, '--', '-o', 'StrictHostKeyChecking=no'])
+
+console.log('Signing in to Codex...')
+await executeSshStream(ip, ['codex', 'login', '--device-auth'])
