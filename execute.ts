@@ -10,7 +10,7 @@ export const execute = async ([cmd, ...args]: string[]) => {
   return withStdDecoded(res)
 }
 
-const skipHostKeyChecking = ['-o', 'StrictHostKeyChecking=no']
+const skipHostKeyChecking = ['-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null']
 
 export const executeSsh = async (ip: string, cmd: string[]) => {
   const res = await Deno.spawnAndWait('ssh', [...skipHostKeyChecking, `root@${ip}`, ...cmd])
